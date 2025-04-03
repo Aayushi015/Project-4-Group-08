@@ -1,0 +1,13 @@
+source_of_money,(All),,
+risk_score,(All),,
+transaction_type,Property Purchase,,
+,,,
+Row Labels,Count of transaction_id,Sum of amount_usd,Sum of shell_co_involved
+2013,1805,4422190963,7969
+Qtr1,457,1123714504,2182
+Qtr2,430,1060340205,1878
+Qtr3,460,1110966474,1942
+Qtr4,458,1127169781,1967
+2014,281,689623991.7,1263
+Qtr1,281,689623991.7,1263
+Grand Total,2086,5111814955,9232
