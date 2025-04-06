@@ -80,16 +80,19 @@ function makePredictions() {
         contentType: 'application/json;charset=UTF-8',
         data: JSON.stringify({ "data": payload }),
         success: function(returnedData) {
-            // print it
+            // Log when the prediction is complete
+            console.log("Prediction Complete!")
             console.log(returnedData);
+
+            let prob = parseFloat(returnedData["prediction"]);
+            
             // JS receives the response from modelHelper/ We extract and parse the response to show the user the below outcome.
             $("#output").show();
             
-            let prob = parseFloat(returnedData["prediction"]);
             if (prob > 0.5) {
-                $("#output").removeClass().addClass("alert alert-success").text(`Source is likely LEGAL with probability ${prob.toFixed(2)}`);
+                $("#output").removeClass().addClass("custom-legal").text(`Source is likely LEGAL with probability ${prob.toFixed(2)}`);
             } else {
-                $("#output").removeClass().addClass("alert alert-danger").text(`Source is likely ILLEGAL with probability ${(1 - prob).toFixed(2)}`);
+                $("#output").removeClass().addClass("custom-illegal").text(`Source is likely ILLEGAL with probability ${(1 - prob).toFixed(2)}`);
             }            
 
             // Call buildDonut function
@@ -116,7 +119,7 @@ function buildDonut(prob) {
         labels: ['Legal', 'Illegal'],
         hole: 0.5,
         marker: {
-          colors: ['#007bff', '#dc3545'],
+          colors: ['#1D3557', '#E63946'],
           line: {
             color: '#fff',
             width: 2

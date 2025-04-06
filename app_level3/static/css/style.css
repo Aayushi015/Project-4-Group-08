@@ -1,0 +1,28 @@
+/* Footer Styling */
+footer {
+    background-color: #1D3557; 
+    color: #ffffff;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: auto;
+    bottom: 0;
+    width: 100%;
+    position: sticky;
+}
+
+/* Custom class for LEGAL outcome */
+.custom-legal {
+    background-color: #1D3557;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Custom class for ILLEGAL outcome */
+.custom-illegal {
+    background-color: #E63946;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
