@@ -7,6 +7,42 @@ $(document).ready(function() {
     });
 });
 
+function drawEmptyDonut() {
+    let data = [{
+      values: [1],
+      labels: ['Awaiting Prediction'],
+      hole: .5,
+      marker: {
+        colors: ['#e0e0e0']
+      },
+      textinfo: "label",
+      type: 'pie'
+    }];
+  
+    let layout = {
+      annotations: [{
+        font: { size: 22 },
+        showarrow: false,
+        text: 'No Prediction Yet',
+        x: 0.5,
+        y: 0.5
+      }],
+      height: 600,
+      width: 600,
+      showlegend: false
+    };
+  
+    Plotly.newPlot('donut', data, layout);
+  }
+  
+  $(document).ready(function () {
+    drawEmptyDonut(); // Before user does any input
+    $("#filter").click(function () {
+      makePredictions();
+    });
+  });
+  
+
 
     // call Flask API endpoint (Use JavaScripts to reate makePredictions function.)
     // Note: This grab the values from html for all options in our form, make those variables into a payload dictionary below. 
@@ -47,13 +83,14 @@ function makePredictions() {
             // print it
             console.log(returnedData);
             // JS receives the response from modelHelper/ We extract and parse the response to show the user the below outcome.
+            $("#output").show();
+            
             let prob = parseFloat(returnedData["prediction"]);
-
             if (prob > 0.5) {
-                $("#output").text(`Source of money is legal with probability ${prob}!`);
+                $("#output").removeClass().addClass("alert alert-success").text(`Source is likely LEGAL with probability ${prob.toFixed(2)}`);
             } else {
-                $("#output").text(`Source of money is illegal with probability ${prob}. :(`);
-            }
+                $("#output").removeClass().addClass("alert alert-danger").text(`Source is likely ILLEGAL with probability ${(1 - prob).toFixed(2)}`);
+            }            
 
             // Call buildDonut function
             buildDonut(prob);
@@ -76,25 +113,35 @@ function buildDonut(prob) {
 
     let data = [{
         values: [legal, illegal],
-        labels: ['Legal', 'illegal'],
-        hole: .5,
+        labels: ['Legal', 'Illegal'],
+        hole: 0.5,
         marker: {
-            colors: ['blue', 'red']
+          colors: ['#007bff', '#dc3545'],
+          line: {
+            color: '#fff',
+            width: 2
+          }
         },
         textinfo: "label+percent",
+        hoverinfo: "label+percent",
         type: 'pie'
-    }];
+      }];
+      
+
+    let resultText = prob > 0.5
+        ? `LEGAL (${(prob * 100).toFixed(1)}%)`
+        : `ILLEGAL (${((1 - prob) * 100).toFixed(1)}%)`;
 
     let layout = {
         annotations: [{
-            font: {size: 30},
+            font: {size: 22},
             showarrow: false,
-            text: 'Source of Money',
+            text: resultText,
             x: 0.5,
             y: 0.5
         }],
-        height: 800,
-        width: 1200,
+        height: 600,
+        width: 600,
         showlegend: false
     };
 
