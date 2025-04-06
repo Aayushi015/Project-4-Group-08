@@ -14,7 +14,58 @@
 </head>
 
 <body>
-    <h1>to be added..............................</h1>
+    {% include 'navbar.html' %}
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">About Us</h1>
+        <p class="text-center">We are a team of aspiring data scientists and developers working to identify suspicious financial transactions using machine learning. Our goal is to support transparency and combat illicit activities through data-driven insights.</p>
+        
+        <hr class="my-5">
+
+        <h2 class="text-center mb-4">Meet the Team</h2>
+        <div class="row justify-content-center">
+            <!-- Team Member 1 -->
+            <div class="col-md-3 text-center mb-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/aayushi.png') }}" class="card-img-top rounded-circle p-3" alt="Aayushi Patel">
+                    <div class="card-body">
+                        <h5 class="card-title">Aayushi Patel</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="col-md-3 text-center mb-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/kim.png') }}" class="card-img-top rounded-circle p-3" alt="Kim Nguyen">
+                    <div class="card-body">
+                        <h5 class="card-title">Kim Nguyen</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="col-md-3 text-center mb-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/marcanthony.png') }}" class="card-img-top rounded-circle p-3" alt="Marcanthony Solorzano">
+                    <div class="card-body">
+                        <h5 class="card-title">Marcanthony Solorzano</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="col-md-3 text-center mb-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/matthew.png') }}" class="card-img-top rounded-circle p-3" alt="Matthew Adent">
+                    <div class="card-body">
+                        <h5 class="card-title">Matthew Adent</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 
 </html>

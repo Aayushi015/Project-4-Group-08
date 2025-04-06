@@ -38,7 +38,7 @@ We tested and evaluated four classification models on the fraud detection datase
 
 Model    Accuracy    AUC    Notes
 Logistic Regression    70.0%    0.492    Predicted only legal transactions; failed to detect fraud.
-Random Forest    65.0%    0.500    Overfit training data (100% accuracy); weak generalization.
+Random Forest    65.0%    0.500    Overfit training data (100% accuracy), weak generalization.
 AdaBoost Classifier    70.0%    0.480    Same result as Logistic Regression; ignored minority class.
 Gradient Boosting    70.0%    0.494    Slight improvement: identified a few fraudulent cases (recall = 1.3%).
 
@@ -69,7 +69,8 @@ Tools: Jupyter Notebook, GitHub
 
 ## Next Steps
 Finalize Tableau dashboard visuals
+Explore deep learning models
+Deploy the model using Flask for real time prediction
 
-Explore deep learning models or ensemble stacking
-
-Deploy the model using Flask for real-time prediction
+# Project-4-Group-08
+## Aayushi Patel, Kim Nguyen, Marcanthony Solorzano, Matthew Adent 

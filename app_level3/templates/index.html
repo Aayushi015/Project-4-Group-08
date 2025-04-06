@@ -20,98 +20,75 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    {% include 'navbar.html' %}
 
-        <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Black Money Transaction
-                <span class="sr-only">(current)</span>
-              </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <a href="/about_us">About Us</a>
-    <hr style="color:lightgray; border-width: 3px;">
-    <div class="container">
-        <div class="card border-primary mb-3" style="max-width: 20rem;">
-            <div class="card-header">Filters</div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="col-form-label" for="amount_usd">Amount_USD</label>
-                            <input type="number" class="form-control" value="3.440533e+06" id="amount_usd">
-                        </div>
-                        <div class="form-group">
-                            <label class="col-form-label" for="risk_score">Risk Score</label>
-                            <input type="number" class="form-control" value="8" id="risk_score">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="col-form-label" for="shell_co_involved">Shell Co. Involved</label>
-                            <input type="number" class="form-control" value="3" id="shell_co_involved">
-                        </div>
-                        <div class="form-group">
-                            <label class="col-form-label" for="transaction_type">Transaction Type</label>
-                            <select id="transaction_type">
-                                <option value="Offshore Transfer">Offshore Transfer</option>
-                                <option value="Stocks Transfer">Stocks Transfer</option>
-                                <option value="Property Purchase">Property Purchase</option>
-                                <option value="Cryptocurrency">Cryptocurrency</option>
-                                <option value="Cash Withdrawal">Cash Withdrawal</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-form-label" for="industry">Industry</label>
-                            <select id="industry">
-                                <option value="Finance">Finance</option>
-                                <option value="Construction">Construction</option>
-                                <option value="Luxury Goods">Luxury Goods</option>
-                                <option value="Real Estate">Real Estate</option>
-                                <option value="Arms Trade">Arms Trade</option>
-                                <option value="Casinos">Casinos</option>
-                                <option value="Oil & Gas">Oil & Gas</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-form-label" for="reported_by_authority">Reported By Authority?</label>
-                            <select id="reported_by_authority">
-                                <option value="True">Yes</option>
-                                <option value="False">No</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <button type="button" class="btn btn-primary" id="filter">Make Prediction!</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="jumbotron text-center mt-4">
+        <h1>Black Money Transaction Detection</h1>
+        <p class="lead">Use our machine learning model to determine whether a transaction source is legal or suspicious.</p>
     </div>
-    <hr style="color:lightgray; border-width: 3px;">
-    <div class="container-fluid">
+
+    <div class="container mt-4">
         <div class="row">
-            <div class="col-md-12">
-                <h1 id="output"></h1>
+          <!-- Left Column: Filter Form -->
+          <div class="col-md-4">
+            <div class="card border-primary mb-4">
+              <div class="card-header">Filters</div>
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="amount_usd">Amount_USD</label>
+                  <input type="number" class="form-control" value="3.440533e+06" id="amount_usd">
+                </div>
+                <div class="form-group">
+                  <label for="risk_score">Risk Score</label>
+                  <input type="number" class="form-control" value="8" id="risk_score">
+                </div>
+                <div class="form-group">
+                  <label for="shell_co_involved">Shell Co. Involved</label>
+                  <input type="number" class="form-control" value="3" id="shell_co_involved">
+                </div>
+                <div class="form-group">
+                  <label for="transaction_type">Transaction Type</label>
+                  <select class="form-control" id="transaction_type">
+                    <option value="Offshore Transfer">Offshore Transfer</option>
+                    <option value="Stocks Transfer">Stocks Transfer</option>
+                    <option value="Property Purchase">Property Purchase</option>
+                    <option value="Cryptocurrency">Cryptocurrency</option>
+                    <option value="Cash Withdrawal">Cash Withdrawal</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="industry">Industry</label>
+                  <select class="form-control" id="industry">
+                    <option value="Finance">Finance</option>
+                    <option value="Construction">Construction</option>
+                    <option value="Luxury Goods">Luxury Goods</option>
+                    <option value="Real Estate">Real Estate</option>
+                    <option value="Arms Trade">Arms Trade</option>
+                    <option value="Casinos">Casinos</option>
+                    <option value="Oil & Gas">Oil & Gas</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="reported_by_authority">Reported By Authority?</label>
+                  <select class="form-control" id="reported_by_authority">
+                    <option value="True">Yes</option>
+                    <option value="False">No</option>
+                  </select>
+                </div>
+                <button type="button" class="btn btn-primary w-100" id="filter">Make Prediction!</button>
+              </div>
+            </div>
+          </div>
+      
+            <!-- Right Column: Donut Chart -->
+            <div class="col-md-8 d-flex flex-column align-items-center">
+                <h2 class="mb-3">Prediction Chart</h2>
+                <div id="donut" style="height: 400px; margin-bottom: 20px;"></div>
             </div>
         </div>
+    <div id="donut" style="height: 400px; margin-bottom: 20px;"></div>
     </div>
-    <hr>
-        <div class="container">
-          <div class="row justify-content-center">
-            <h2 class="text-center mb-0">Prediction Chart</h2>
-            <div id="donut" width="400" height="400"></div>
-          </div>
-        </div>
+      
 </body>
 
 </html>
