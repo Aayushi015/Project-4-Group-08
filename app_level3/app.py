@@ -28,6 +28,10 @@ def tableau2():
     # Return template and data
     return render_template("tableau2.html")
 
+# // Note: App.py receives the payload from logic.js, then extract and parse and fix the data types of values to payload and send the infomation to model Helper. 
+# //../Our model Helper class we built and tested it in Jupyter Notebook with a function makePrediction that bring in all unique values to a data frame
+# // .. opens up the model, makes the inference, and return the inference back to the user.
+
 @app.route("/makePredictions", methods=["POST"])
 def make_predictions():
     content = request.json["data"]
@@ -41,7 +45,9 @@ def make_predictions():
     risk_score = int(content["risk_score"])
     shell_co_involved = int(content["shell_co_involved"])
 
+    # // Sending the infomation to model Helper, which again they read in up at the top
     preds = modelHelper.make_predictions(amount_usd, transaction_type, industry, reported_by_authority, risk_score, shell_co_involved)
+    # // We get the inference and send it back to the front end (JavaScripts (logic.js)
     return(jsonify({"ok": True, "prediction": str(preds)}))
 
 
