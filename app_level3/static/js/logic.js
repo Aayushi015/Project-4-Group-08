@@ -56,10 +56,8 @@ function makePredictions() {
             }
 
             // Call buildDonut function
-            buildDonut(prob)
+            buildDonut(prob);
         },
-
-
         error: function(XMLHttpRequest, textStatus, errorThrown) {
             console.error("Error: ", errorThrown);
             console.error("Status: ", textStatus);
@@ -73,25 +71,25 @@ function makePredictions() {
 
 function buildDonut(prob) {
     // Data
-    let legal = prob
+    let legal = prob;
     let illegal = 1-prob;
 
     let data = [{
         values: [legal, illegal],
-        labels: ['Legal', 'illegal']
+        labels: ['Legal', 'illegal'],
         hole: .5,
         marker: {
             colors: ['blue', 'red']
         },
-        textinfo:"label+percent",
+        textinfo: "label+percent",
         type: 'pie'
-    }],
+    }];
 
     let layout = {
-        annotation: [{
+        annotations: [{
             font: {size: 30},
-            showarrow: false
-            text: 'Legal',
+            showarrow: false,
+            text: 'Source of Money',
             x: 0.5,
             y: 0.5
         }],
@@ -100,6 +98,6 @@ function buildDonut(prob) {
         showlegend: false
     };
 
-    Plotly.newPlot('donut', data,layout);
+    Plotly.newPlot('donut', data, layout);
 
-};
+}

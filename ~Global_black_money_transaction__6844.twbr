@@ -1,0 +1,1354 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.24.1010.1014                               -->
+<workbook original-version='18.1' source-build='2024.3.0 (20243.24.1010.1014)' source-platform='win' version='18.1' xml:base='https://localhost' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <VizInTooltipHideWorksheet />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <repository-location derived-from='https://haproxy-traffic-splitter/workbooks/Global_black_money_transaction?rev=1.0' id='Global_black_money_transaction' path='/workbooks' revision='1.0' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Metric Parameter' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;amount_usd&quot;'>
+        <calculation class='tableau' formula='&quot;amount_usd&quot;' />
+        <members>
+          <member value='&quot;risk_score&quot;' />
+          <member value='&quot;shell_co_involved&quot;' />
+          <member value='&quot;amount_usd&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='cleaned_dataset' inline='true' name='federated.16tss5s1lworu110jsqwd1ks77cs' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='cleaned_dataset' name='textscan.1jjm32l1h3dazm169s03506i5hvr'>
+            <connection class='textscan' directory='C:/Users/kimkh/OneDrive/RICE/Project/Project-4-Group-08' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1jjm32l1h3dazm169s03506i5hvr' name='cleaned_dataset.csv' table='[cleaned_dataset#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='transaction_id' ordinal='0' />
+            <column datatype='string' name='country' ordinal='1' />
+            <column datatype='real' name='amount_usd' ordinal='2' />
+            <column datatype='string' name='transaction_type' ordinal='3' />
+            <column datatype='datetime' name='transaction_date' ordinal='4' />
+            <column datatype='string' name='person_involved' ordinal='5' />
+            <column datatype='string' name='industry' ordinal='6' />
+            <column datatype='string' name='destination_country' ordinal='7' />
+            <column datatype='boolean' name='reported_by_authority' ordinal='8' />
+            <column datatype='string' name='source_of_money' ordinal='9' />
+            <column datatype='integer' name='risk_score' ordinal='10' />
+            <column datatype='integer' name='shell_co_involved' ordinal='11' />
+            <column datatype='string' name='financial_ins' ordinal='12' />
+            <column datatype='string' name='tax_country' ordinal='13' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[cleaned_dataset.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>transaction_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[transaction_id]</local-name>
+            <parent-name>[cleaned_dataset.csv]</parent-name>
+            <remote-alias>transaction_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[country]</local-name>
+            <parent-name>[cleaned_dataset.csv]</parent-name>
+            <remote-alias>country</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>amount_usd</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[amount_usd]</local-name>
+            <parent-name>[cleaned_dataset.csv]</parent-name>
+            <remote-alias>amount_usd</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>transaction_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[transaction_type]</local-name>
+            <parent-name>[cleaned_dataset.csv]</parent-name>
+            <remote-alias>transaction_type</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>transaction_date</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[transaction_date]</local-name>
+            <parent-name>[cleaned_dataset.csv]</parent-name>
+            <remote-alias>transaction_date</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>person_involved</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[person_involved]</local-name>
+            <parent-name>[cleaned_dataset.csv]</parent-name>
+            <remote-alias>person_involved</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>industry</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[industry]</local-name>
+            <parent-name>[cleaned_dataset.csv]</parent-name>
+            <remote-alias>industry</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>destination_country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[destination_country]</local-name>
+            <parent-name>[cleaned_dataset.csv]</parent-name>
+            <remote-alias>destination_country</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>reported_by_authority</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[reported_by_authority]</local-name>
+            <parent-name>[cleaned_dataset.csv]</parent-name>
+            <remote-alias>reported_by_authority</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>source_of_money</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[source_of_money]</local-name>
+            <parent-name>[cleaned_dataset.csv]</parent-name>
+            <remote-alias>source_of_money</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>risk_score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[risk_score]</local-name>
+            <parent-name>[cleaned_dataset.csv]</parent-name>
+            <remote-alias>risk_score</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>shell_co_involved</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[shell_co_involved]</local-name>
+            <parent-name>[cleaned_dataset.csv]</parent-name>
+            <remote-alias>shell_co_involved</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>financial_ins</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[financial_ins]</local-name>
+            <parent-name>[cleaned_dataset.csv]</parent-name>
+            <remote-alias>financial_ins</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tax_country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[tax_country]</local-name>
+            <parent-name>[cleaned_dataset.csv]</parent-name>
+            <remote-alias>tax_country</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Metric Cals' datatype='real' name='[Calculation_973903483369877505]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = &quot;risk_score&quot; THEN&#13;&#10;    [risk_score]&#13;&#10;ELSEIF [Parameters].[Parameter 1] = &quot;shell_co_involved&quot; THEN&#13;&#10;    [shell_co_involved]&#13;&#10;ELSE&#13;&#10;    [amount_usd]&#13;&#10;END' />
+      </column>
+      <column caption='cleaned_dataset.csv' datatype='table' name='[__tableau_internal_object_id__].[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]' role='measure' type='quantitative' />
+      <column caption='Amount Usd' datatype='real' name='[amount_usd]' role='measure' type='quantitative' />
+      <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Destination Country' datatype='string' name='[destination_country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Financial Ins' datatype='string' name='[financial_ins]' role='dimension' type='nominal' />
+      <column caption='Industry' datatype='string' name='[industry]' role='dimension' type='nominal' />
+      <column aggregation='CountD' caption='Person Involved' datatype='string' name='[person_involved]' role='dimension' type='nominal' />
+      <column caption='Reported By Authority' datatype='boolean' name='[reported_by_authority]' role='dimension' type='nominal' />
+      <column caption='Risk Score' datatype='integer' name='[risk_score]' role='measure' type='quantitative' />
+      <column caption='Shell Co Involved' datatype='integer' name='[shell_co_involved]' role='measure' type='quantitative' />
+      <column caption='Source Of Money' datatype='string' name='[source_of_money]' role='dimension' type='nominal' />
+      <column caption='Tax Country' datatype='string' name='[tax_country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Transaction Date' datatype='datetime' name='[transaction_date]' role='dimension' type='ordinal' />
+      <column aggregation='CountD' caption='Transaction Id' datatype='string' default-role='measure' default-type='quantitative' name='[transaction_id]' role='dimension' type='nominal' />
+      <column caption='Transaction Type' datatype='string' name='[transaction_type]' role='dimension' type='nominal' />
+      <column-instance column='[amount_usd]' derivation='Avg' name='[avg:amount_usd:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[transaction_id]' derivation='Count' name='[cnt:transaction_id:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[transaction_id]' derivation='CountD' name='[ctd:transaction_id:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[amount_usd]' derivation='Sum' name='[sum:amount_usd:qk]' pivot='key' type='quantitative' />
+      <group caption='Tooltip (Country,Destination Country)' hidden='true' name='[Tooltip (Country,Destination Country)]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[country]' />
+          <groupfilter function='level-members' level='[destination_country]' />
+        </groupfilter>
+      </group>
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp/#TableauTemp_0u2clvj05k3htk1fmtxxt02w4cuj.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='04/06/2025 02:04:27 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>transaction_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[transaction_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>transaction_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>cleaned_dataset.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>10000</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>country</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[country]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>country</remote-alias>
+              <ordinal>1</ordinal>
+              <family>cleaned_dataset.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>amount_usd</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[amount_usd]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>amount_usd</remote-alias>
+              <ordinal>2</ordinal>
+              <family>cleaned_dataset.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10000</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>transaction_type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[transaction_type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>transaction_type</remote-alias>
+              <ordinal>3</ordinal>
+              <family>cleaned_dataset.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>transaction_date</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[transaction_date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>transaction_date</remote-alias>
+              <ordinal>4</ordinal>
+              <family>cleaned_dataset.csv</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>10000</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>person_involved</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[person_involved]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>person_involved</remote-alias>
+              <ordinal>5</ordinal>
+              <family>cleaned_dataset.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4044</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>industry</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[industry]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>industry</remote-alias>
+              <ordinal>6</ordinal>
+              <family>cleaned_dataset.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>destination_country</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[destination_country]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>destination_country</remote-alias>
+              <ordinal>7</ordinal>
+              <family>cleaned_dataset.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>reported_by_authority</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[reported_by_authority]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>reported_by_authority</remote-alias>
+              <ordinal>8</ordinal>
+              <family>cleaned_dataset.csv</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>source_of_money</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[source_of_money]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>source_of_money</remote-alias>
+              <ordinal>9</ordinal>
+              <family>cleaned_dataset.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>risk_score</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[risk_score]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>risk_score</remote-alias>
+              <ordinal>10</ordinal>
+              <family>cleaned_dataset.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>shell_co_involved</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[shell_co_involved]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>shell_co_involved</remote-alias>
+              <ordinal>11</ordinal>
+              <family>cleaned_dataset.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>financial_ins</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[financial_ins]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>financial_ins</remote-alias>
+              <ordinal>12</ordinal>
+              <family>cleaned_dataset.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>672</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>tax_country</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[tax_country]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>tax_country</remote-alias>
+              <ordinal>13</ordinal>
+              <family>cleaned_dataset.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout common-percentage='0.886191' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.113809' show-structure='true' user-set-layout-v2='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.16tss5s1lworu110jsqwd1ks77cs].[avg:amount_usd:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:amount_usd:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.16tss5s1lworu110jsqwd1ks77cs].[cnt:transaction_id:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.16tss5s1lworu110jsqwd1ks77cs].[ctd:transaction_id:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Metric Parameter' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;amount_usd&quot;'>
+          <calculation class='tableau' formula='&quot;amount_usd&quot;' />
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='cleaned_dataset.csv' id='cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32'>
+            <properties context=''>
+              <relation connection='textscan.1jjm32l1h3dazm169s03506i5hvr' name='cleaned_dataset.csv' table='[cleaned_dataset#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='transaction_id' ordinal='0' />
+                  <column datatype='string' name='country' ordinal='1' />
+                  <column datatype='real' name='amount_usd' ordinal='2' />
+                  <column datatype='string' name='transaction_type' ordinal='3' />
+                  <column datatype='datetime' name='transaction_date' ordinal='4' />
+                  <column datatype='string' name='person_involved' ordinal='5' />
+                  <column datatype='string' name='industry' ordinal='6' />
+                  <column datatype='string' name='destination_country' ordinal='7' />
+                  <column datatype='boolean' name='reported_by_authority' ordinal='8' />
+                  <column datatype='string' name='source_of_money' ordinal='9' />
+                  <column datatype='integer' name='risk_score' ordinal='10' />
+                  <column datatype='integer' name='shell_co_involved' ordinal='11' />
+                  <column datatype='string' name='financial_ins' ordinal='12' />
+                  <column datatype='string' name='tax_country' ordinal='13' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Amount per country'>
+      <repository-location derived-from='https://haproxy-traffic-splitter/workbooks/Global_black_money_transaction/Amountpercountry?rev=' id='114578793' path='/workbooks/Global_black_money_transaction' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleaned_dataset' name='federated.16tss5s1lworu110jsqwd1ks77cs' />
+          </datasources>
+          <datasource-dependencies datasource='federated.16tss5s1lworu110jsqwd1ks77cs'>
+            <column caption='Amount Usd' datatype='real' name='[amount_usd]' role='measure' type='quantitative' />
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[source_of_money]' derivation='None' name='[none:source_of_money:nk]' pivot='key' type='nominal' />
+            <column caption='Source Of Money' datatype='string' name='[source_of_money]' role='dimension' type='nominal' />
+            <column-instance column='[amount_usd]' derivation='Sum' name='[sum:amount_usd:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:amount_usd:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:amount_usd:qk]' />
+              <text column='[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:amount_usd:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='has-stroke' value='false' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.16tss5s1lworu110jsqwd1ks77cs].[none:country:nk]</rows>
+        <cols>[federated.16tss5s1lworu110jsqwd1ks77cs].[none:source_of_money:nk]</cols>
+      </table>
+      <simple-id uuid='{6E6A138A-44C1-4807-BEED-9EC14BD015C9}' />
+    </worksheet>
+    <worksheet name='Country'>
+      <repository-location derived-from='https://haproxy-traffic-splitter/workbooks/Global_black_money_transaction/Sheet7?rev=' id='114578801' path='/workbooks/Global_black_money_transaction' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleaned_dataset' name='federated.16tss5s1lworu110jsqwd1ks77cs' />
+          </datasources>
+          <datasource-dependencies datasource='federated.16tss5s1lworu110jsqwd1ks77cs'>
+            <column caption='Amount Usd' datatype='real' name='[amount_usd]' role='measure' type='quantitative' />
+            <column-instance column='[transaction_id]' derivation='Count' name='[cnt:transaction_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Destination Country' datatype='string' name='[destination_country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[amount_usd]' derivation='Sum' name='[sum:amount_usd:qk]' pivot='key' type='quantitative' />
+            <column aggregation='CountD' caption='Transaction Id' datatype='string' default-role='measure' default-type='quantitative' name='[transaction_id]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.16tss5s1lworu110jsqwd1ks77cs].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:amount_usd:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.16tss5s1lworu110jsqwd1ks77cs].[cnt:transaction_id:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.16tss5s1lworu110jsqwd1ks77cs].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:amount_usd:qk]&quot;</bucket>
+              <bucket>&quot;[federated.16tss5s1lworu110jsqwd1ks77cs].[cnt:transaction_id:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.16tss5s1lworu110jsqwd1ks77cs].[Tooltip (Country,Destination Country)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action - Country]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[country]' />
+              <groupfilter function='level-members' level='[destination_country]' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.16tss5s1lworu110jsqwd1ks77cs].[:Measure Names]</column>
+            <column>[federated.16tss5s1lworu110jsqwd1ks77cs].[Tooltip (Country,Destination Country)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:amount_usd:qk]' palette='red_blue_diverging_10_0' reverse='true' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:amount_usd:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.16tss5s1lworu110jsqwd1ks77cs].[Multiple Values]</rows>
+        <cols>([federated.16tss5s1lworu110jsqwd1ks77cs].[none:country:nk] / [federated.16tss5s1lworu110jsqwd1ks77cs].[:Measure Names])</cols>
+      </table>
+      <simple-id uuid='{B095CB95-709F-4DD4-BEF5-76918B34163F}' />
+    </worksheet>
+    <worksheet name='Map'>
+      <repository-location derived-from='https://haproxy-traffic-splitter/workbooks/Global_black_money_transaction/Sheet2?rev=' id='114578794' path='/workbooks/Global_black_money_transaction' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleaned_dataset' name='federated.16tss5s1lworu110jsqwd1ks77cs' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.16tss5s1lworu110jsqwd1ks77cs'>
+            <column-instance column='[transaction_id]' derivation='Count' name='[cnt:transaction_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Destination Country' datatype='string' name='[destination_country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Industry' datatype='string' name='[industry]' role='dimension' type='nominal' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[destination_country]' derivation='None' name='[none:destination_country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[industry]' derivation='None' name='[none:industry:nk]' pivot='key' type='nominal' />
+            <column-instance column='[source_of_money]' derivation='None' name='[none:source_of_money:nk]' pivot='key' type='nominal' />
+            <column-instance column='[tax_country]' derivation='None' name='[none:tax_country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[transaction_type]' derivation='None' name='[none:transaction_type:nk]' pivot='key' type='nominal' />
+            <column caption='Source Of Money' datatype='string' name='[source_of_money]' role='dimension' type='nominal' />
+            <column caption='Tax Country' datatype='string' name='[tax_country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Transaction Date' datatype='datetime' name='[transaction_date]' role='dimension' type='ordinal' />
+            <column aggregation='CountD' caption='Transaction Id' datatype='string' default-role='measure' default-type='quantitative' name='[transaction_id]' role='dimension' type='nominal' />
+            <column caption='Transaction Type' datatype='string' name='[transaction_type]' role='dimension' type='nominal' />
+            <column-instance column='[transaction_date]' derivation='Year' name='[yr:transaction_date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.16tss5s1lworu110jsqwd1ks77cs].[none:country:nk]'>
+            <groupfilter function='level-members' level='[none:country:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.16tss5s1lworu110jsqwd1ks77cs].[none:industry:nk]'>
+            <groupfilter function='level-members' level='[none:industry:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.16tss5s1lworu110jsqwd1ks77cs].[none:source_of_money:nk]'>
+            <groupfilter function='level-members' level='[none:source_of_money:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.16tss5s1lworu110jsqwd1ks77cs].[none:tax_country:nk]'>
+            <groupfilter function='level-members' level='[none:tax_country:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.16tss5s1lworu110jsqwd1ks77cs].[none:transaction_type:nk]'>
+            <groupfilter function='level-members' level='[none:transaction_type:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.16tss5s1lworu110jsqwd1ks77cs].[yr:transaction_date:ok]'>
+            <groupfilter function='member' level='[yr:transaction_date:ok]' member='2013' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.16tss5s1lworu110jsqwd1ks77cs].[yr:transaction_date:ok]</column>
+            <column>[federated.16tss5s1lworu110jsqwd1ks77cs].[none:source_of_money:nk]</column>
+            <column>[federated.16tss5s1lworu110jsqwd1ks77cs].[none:country:nk]</column>
+            <column>[federated.16tss5s1lworu110jsqwd1ks77cs].[none:tax_country:nk]</column>
+            <column>[federated.16tss5s1lworu110jsqwd1ks77cs].[none:industry:nk]</column>
+            <column>[federated.16tss5s1lworu110jsqwd1ks77cs].[none:transaction_type:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.16tss5s1lworu110jsqwd1ks77cs].[Longitude (generated)]' field-type='quantitative' max='29717728.199841149' min='-16356954.037029479' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.16tss5s1lworu110jsqwd1ks77cs].[Latitude (generated)]' field-type='quantitative' max='20900669.520948201' min='-6280642.7791158976' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.16tss5s1lworu110jsqwd1ks77cs].[cnt:transaction_id:qk]' palette='red_blue_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='Coastline' value='true' />
+            <format attr='enabled' id='b01002_001e' value='false' />
+            <format attr='enabled' id='b01002_002e' value='false' />
+            <format attr='enabled' id='b01002_003e' value='false' />
+            <format attr='enabled' id='dp02_0001e' value='false' />
+            <format attr='enabled' id='dp02_0015e' value='false' />
+            <format attr='enabled' id='dp03_0027e_plus_dp03_0029e' value='false' />
+            <format attr='enabled' id='dp03_0028e' value='false' />
+            <format attr='enabled' id='dp03_0030e_plus_dp03_0031e' value='false' />
+            <format attr='enabled' id='dp03_0062e' value='false' />
+            <format attr='enabled' id='dp03_0088e' value='false' />
+            <format attr='enabled' id='dp04_0001e' value='false' />
+            <format attr='enabled' id='dp04_0046e' value='false' />
+            <format attr='enabled' id='dp04_0047e' value='false' />
+            <format attr='enabled' id='dp04_0089e' value='false' />
+            <format attr='enabled' id='dp05_0001e' value='false' />
+            <format attr='enabled' id='dp05_0002e_div_dp05_0003e' value='false' />
+            <format attr='enabled' id='dp05_0032e' value='true' />
+            <format attr='enabled' id='dp05_0033e' value='false' />
+            <format attr='enabled' id='dp05_0034e' value='false' />
+            <format attr='enabled' id='dp05_0039e' value='false' />
+            <format attr='enabled' id='dp05_0047e' value='false' />
+            <format attr='enabled' id='dp05_0053e' value='false' />
+            <format attr='enabled' id='dp05_0066e' value='false' />
+            <format attr='enabled' id='dp05_0077e' value='false' />
+            <format attr='enabled' id='Zip Code Boundaries-bg' value='true' />
+            <format attr='enabled' id='Zip Code Boundaries' value='true' />
+            <format attr='enabled' id='Zip Code Labels' value='true' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0' />
+            <format attr='map-style' value='streets' />
+          </style-rule>
+          <style-rule element='map-data-layer'>
+            <format attr='palette' value='tableau-map-blue-green-light' />
+            <format attr='geo-area-type' value='County' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Multipolygon' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <lod column='[federated.16tss5s1lworu110jsqwd1ks77cs].[none:country:nk]' />
+              <lod column='[federated.16tss5s1lworu110jsqwd1ks77cs].[none:destination_country:nk]' />
+              <lod column='[federated.16tss5s1lworu110jsqwd1ks77cs].[cnt:transaction_id:qk]' />
+              <color column='[federated.16tss5s1lworu110jsqwd1ks77cs].[cnt:transaction_id:qk]' />
+              <lod column='[federated.16tss5s1lworu110jsqwd1ks77cs].[cnt:transaction_id:qk]' />
+              <geometry column='[federated.16tss5s1lworu110jsqwd1ks77cs].[Geometry (generated)]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'><![CDATA[<Sheet name="Country" maxwidth="300" maxheight="300" filter="<All Fields>">]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Country:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.16tss5s1lworu110jsqwd1ks77cs].[none:country:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Destination Country:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.16tss5s1lworu110jsqwd1ks77cs].[none:destination_country:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Count of Transaction Id:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.16tss5s1lworu110jsqwd1ks77cs].[cnt:transaction_id:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='2.2430939674377441' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.16tss5s1lworu110jsqwd1ks77cs].[Latitude (generated)]</rows>
+        <cols>[federated.16tss5s1lworu110jsqwd1ks77cs].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{BF83E9C3-4381-4B9F-B283-C2835A3301A2}' />
+    </worksheet>
+    <worksheet name='Sheet 3'>
+      <repository-location derived-from='https://haproxy-traffic-splitter/workbooks/Global_black_money_transaction/Sheet3?rev=' id='114578795' path='/workbooks/Global_black_money_transaction' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleaned_dataset' name='federated.16tss5s1lworu110jsqwd1ks77cs' />
+          </datasources>
+          <datasource-dependencies datasource='federated.16tss5s1lworu110jsqwd1ks77cs'>
+            <column caption='Amount Usd' datatype='real' name='[amount_usd]' role='measure' type='quantitative' />
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[transaction_id]' derivation='CountD' name='[ctd:transaction_id:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[source_of_money]' derivation='None' name='[none:source_of_money:nk]' pivot='key' type='nominal' />
+            <column caption='Source Of Money' datatype='string' name='[source_of_money]' role='dimension' type='nominal' />
+            <column-instance column='[amount_usd]' derivation='Sum' name='[sum:amount_usd:qk]' pivot='key' type='quantitative' />
+            <column aggregation='CountD' caption='Transaction Id' datatype='string' default-role='measure' default-type='quantitative' name='[transaction_id]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.16tss5s1lworu110jsqwd1ks77cs].[none:source_of_money:nk]'>
+            <groupfilter function='member' level='[none:source_of_money:nk]' member='&quot;Illegal&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.16tss5s1lworu110jsqwd1ks77cs].[none:country:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:amount_usd:qk]' shelf='columns' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.16tss5s1lworu110jsqwd1ks77cs].[none:source_of_money:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.16tss5s1lworu110jsqwd1ks77cs].[none:country:nk]' value='67' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:amount_usd:qk]' palette='red_blue_diverging_10_0' reverse='true' type='interpolated' />
+            <encoding attr='color' field='[federated.16tss5s1lworu110jsqwd1ks77cs].[ctd:transaction_id:qk]' palette='red_blue_diverging_10_0' reverse='true' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:amount_usd:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:amount_usd:qk]' />
+            </encodings>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.16tss5s1lworu110jsqwd1ks77cs].[ctd:transaction_id:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.16tss5s1lworu110jsqwd1ks77cs].[ctd:transaction_id:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.16tss5s1lworu110jsqwd1ks77cs].[sum:amount_usd:qk] + [federated.16tss5s1lworu110jsqwd1ks77cs].[ctd:transaction_id:qk])</rows>
+        <cols>[federated.16tss5s1lworu110jsqwd1ks77cs].[none:country:nk]</cols>
+      </table>
+      <simple-id uuid='{3A5A0A6F-99F2-433A-A7C6-B395AA715F05}' />
+    </worksheet>
+    <worksheet name='Sheet 4'>
+      <repository-location derived-from='https://haproxy-traffic-splitter/workbooks/Global_black_money_transaction/Sheet4?rev=' id='114578796' path='/workbooks/Global_black_money_transaction' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleaned_dataset' name='federated.16tss5s1lworu110jsqwd1ks77cs' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Metric Parameter' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;amount_usd&quot;'>
+              <calculation class='tableau' formula='&quot;amount_usd&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.16tss5s1lworu110jsqwd1ks77cs'>
+            <column caption='Metric Cals' datatype='real' name='[Calculation_973903483369877505]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = &quot;risk_score&quot; THEN&#13;&#10;    [risk_score]&#13;&#10;ELSEIF [Parameters].[Parameter 1] = &quot;shell_co_involved&quot; THEN&#13;&#10;    [shell_co_involved]&#13;&#10;ELSE&#13;&#10;    [amount_usd]&#13;&#10;END' />
+            </column>
+            <column caption='Amount Usd' datatype='real' name='[amount_usd]' role='measure' type='quantitative' />
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column caption='Risk Score' datatype='integer' name='[risk_score]' role='measure' type='quantitative' />
+            <column caption='Shell Co Involved' datatype='integer' name='[shell_co_involved]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_973903483369877505]' derivation='Sum' name='[sum:Calculation_973903483369877505:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:Calculation_973903483369877505:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='size' value='1.9230387210845947' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:Calculation_973903483369877505:qk]</rows>
+        <cols>[federated.16tss5s1lworu110jsqwd1ks77cs].[none:country:nk]</cols>
+      </table>
+      <simple-id uuid='{920FD34E-679C-4AB2-92A2-2A8E7A550A05}' />
+    </worksheet>
+    <worksheet name='Sheet 5'>
+      <repository-location derived-from='https://haproxy-traffic-splitter/workbooks/Global_black_money_transaction/Sheet5?rev=' id='114578798' path='/workbooks/Global_black_money_transaction' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleaned_dataset' name='federated.16tss5s1lworu110jsqwd1ks77cs' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Metric Parameter' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;amount_usd&quot;'>
+              <calculation class='tableau' formula='&quot;amount_usd&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.16tss5s1lworu110jsqwd1ks77cs'>
+            <column caption='Metric Cals' datatype='real' name='[Calculation_973903483369877505]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = &quot;risk_score&quot; THEN&#13;&#10;    [risk_score]&#13;&#10;ELSEIF [Parameters].[Parameter 1] = &quot;shell_co_involved&quot; THEN&#13;&#10;    [shell_co_involved]&#13;&#10;ELSE&#13;&#10;    [amount_usd]&#13;&#10;END' />
+            </column>
+            <column caption='Amount Usd' datatype='real' name='[amount_usd]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_973903483369877505]' derivation='Count' name='[cnt:Calculation_973903483369877505:qk]' pivot='key' type='quantitative' />
+            <column caption='Destination Country' datatype='string' name='[destination_country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[destination_country]' derivation='None' name='[none:destination_country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[source_of_money]' derivation='None' name='[none:source_of_money:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_973903483369877505]' derivation='Sum' name='[pcdf:sum:Calculation_973903483369877505:qk]' pivot='key' type='quantitative'>
+              <table-calc diff-options='Relative' ordering-type='Rows' type='PctDiff'>
+                <address>
+                  <value>-1</value>
+                </address>
+              </table-calc>
+            </column-instance>
+            <column caption='Risk Score' datatype='integer' name='[risk_score]' role='measure' type='quantitative' />
+            <column caption='Shell Co Involved' datatype='integer' name='[shell_co_involved]' role='measure' type='quantitative' />
+            <column caption='Source Of Money' datatype='string' name='[source_of_money]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_973903483369877505]' derivation='Sum' name='[sum:Calculation_973903483369877505:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.16tss5s1lworu110jsqwd1ks77cs].[none:source_of_money:nk]'>
+            <groupfilter function='member' level='[none:source_of_money:nk]' member='&quot;Illegal&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.16tss5s1lworu110jsqwd1ks77cs].[none:destination_country:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.16tss5s1lworu110jsqwd1ks77cs].[cnt:Calculation_973903483369877505:qk]' shelf='columns' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.16tss5s1lworu110jsqwd1ks77cs].[none:source_of_money:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:Calculation_973903483369877505:qk]' palette='red_blue_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:Calculation_973903483369877505:qk]' />
+            </encodings>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.16tss5s1lworu110jsqwd1ks77cs].[cnt:Calculation_973903483369877505:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:Calculation_973903483369877505:qk]' />
+            </encodings>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.16tss5s1lworu110jsqwd1ks77cs].[pcdf:sum:Calculation_973903483369877505:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:Calculation_973903483369877505:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.16tss5s1lworu110jsqwd1ks77cs].[cnt:Calculation_973903483369877505:qk] + [federated.16tss5s1lworu110jsqwd1ks77cs].[pcdf:sum:Calculation_973903483369877505:qk])</rows>
+        <cols>[federated.16tss5s1lworu110jsqwd1ks77cs].[none:destination_country:nk]</cols>
+      </table>
+      <simple-id uuid='{858CE0B0-C13C-476A-B88C-1CBD067F789D}' />
+    </worksheet>
+    <worksheet name='Statistic'>
+      <repository-location derived-from='https://haproxy-traffic-splitter/workbooks/Global_black_money_transaction/Statistic?rev=' id='114578792' path='/workbooks/Global_black_money_transaction' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleaned_dataset' name='federated.16tss5s1lworu110jsqwd1ks77cs' />
+          </datasources>
+          <datasource-dependencies datasource='federated.16tss5s1lworu110jsqwd1ks77cs'>
+            <column caption='cleaned_dataset.csv' datatype='table' name='[__tableau_internal_object_id__].[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32:qk]' pivot='key' type='quantitative' />
+            <column caption='Amount Usd' datatype='real' name='[amount_usd]' role='measure' type='quantitative' />
+            <column-instance column='[risk_score]' derivation='Avg' name='[avg:risk_score:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[person_involved]' derivation='Count' name='[cnt:person_involved:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[source_of_money]' derivation='None' name='[none:source_of_money:nk]' pivot='key' type='nominal' />
+            <column-instance column='[transaction_type]' derivation='None' name='[none:transaction_type:nk]' pivot='key' type='nominal' />
+            <column aggregation='CountD' caption='Person Involved' datatype='string' name='[person_involved]' role='dimension' type='nominal' />
+            <column caption='Risk Score' datatype='integer' name='[risk_score]' role='measure' type='quantitative' />
+            <column caption='Shell Co Involved' datatype='integer' name='[shell_co_involved]' role='measure' type='quantitative' />
+            <column caption='Source Of Money' datatype='string' name='[source_of_money]' role='dimension' type='nominal' />
+            <column-instance column='[amount_usd]' derivation='Sum' name='[sum:amount_usd:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[shell_co_involved]' derivation='Sum' name='[sum:shell_co_involved:qk]' pivot='key' type='quantitative' />
+            <column caption='Transaction Type' datatype='string' name='[transaction_type]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.16tss5s1lworu110jsqwd1ks77cs].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:amount_usd:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.16tss5s1lworu110jsqwd1ks77cs].[cnt:person_involved:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.16tss5s1lworu110jsqwd1ks77cs].[avg:risk_score:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:shell_co_involved:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.16tss5s1lworu110jsqwd1ks77cs].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:amount_usd:qk]&quot;</bucket>
+              <bucket>&quot;[federated.16tss5s1lworu110jsqwd1ks77cs].[cnt:person_involved:qk]&quot;</bucket>
+              <bucket>&quot;[federated.16tss5s1lworu110jsqwd1ks77cs].[__tableau_internal_object_id__].[cnt:cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32:qk]&quot;</bucket>
+              <bucket>&quot;[federated.16tss5s1lworu110jsqwd1ks77cs].[avg:risk_score:qk]&quot;</bucket>
+              <bucket>&quot;[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:shell_co_involved:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.16tss5s1lworu110jsqwd1ks77cs].[none:source_of_money:nk]'>
+            <groupfilter function='member' level='[none:source_of_money:nk]' member='&quot;Illegal&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.16tss5s1lworu110jsqwd1ks77cs].[none:transaction_type:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.16tss5s1lworu110jsqwd1ks77cs].[__tableau_internal_object_id__].[cnt:cleaned_dataset.csv_213A3608B73E4859BF896CC3CE178C32:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.16tss5s1lworu110jsqwd1ks77cs].[:Measure Names]</column>
+            <column>[federated.16tss5s1lworu110jsqwd1ks77cs].[none:source_of_money:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.16tss5s1lworu110jsqwd1ks77cs].[:Measure Names]' value='196' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.16tss5s1lworu110jsqwd1ks77cs].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.16tss5s1lworu110jsqwd1ks77cs].[none:transaction_type:nk]</rows>
+        <cols>[federated.16tss5s1lworu110jsqwd1ks77cs].[:Measure Names]</cols>
+      </table>
+      <simple-id uuid='{57255EE0-B964-4165-BBCD-5764EA937421}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' name='Statistic'>
+      <cards>
+        <edge name='left'>
+          <strip size='128'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='24'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.16tss5s1lworu110jsqwd1ks77cs].[none:source_of_money:nk]' type='filter' />
+            <card param='[federated.16tss5s1lworu110jsqwd1ks77cs].[:Measure Names]' show-morefewerbutton='false' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{B1DD517A-620E-43CC-B27E-1A88DA852D73}' />
+    </window>
+    <window class='worksheet' name='Amount per country'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:amount_usd:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{65A7A5A5-E30E-4BCD-9999-07CAC01A95B9}' />
+    </window>
+    <window class='worksheet' name='Country'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:amount_usd:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{BE85F93D-8CEB-4983-ADD1-1756D13BEAD8}' />
+    </window>
+    <window class='worksheet' name='Map'>
+      <cards>
+        <edge name='left'>
+          <strip size='300'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='dropdown' param='[federated.16tss5s1lworu110jsqwd1ks77cs].[none:country:nk]' type='filter' />
+            <card mode='dropdown' param='[federated.16tss5s1lworu110jsqwd1ks77cs].[none:tax_country:nk]' type='filter' />
+            <card mode='dropdown' param='[federated.16tss5s1lworu110jsqwd1ks77cs].[none:industry:nk]' type='filter' />
+            <card mode='dropdown' param='[federated.16tss5s1lworu110jsqwd1ks77cs].[none:transaction_type:nk]' type='filter' />
+            <card mode='dropdown' param='[federated.16tss5s1lworu110jsqwd1ks77cs].[none:source_of_money:nk]' type='filter' />
+            <card mode='dropdown' param='[federated.16tss5s1lworu110jsqwd1ks77cs].[yr:transaction_date:ok]' type='filter' />
+            <card pane-specification-id='0' type='map' />
+            <card pane-specification-id='0' param='[federated.16tss5s1lworu110jsqwd1ks77cs].[cnt:transaction_id:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{B0512677-D697-4325-AB8E-419A84B0CAEC}' />
+    </window>
+    <window class='worksheet' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.16tss5s1lworu110jsqwd1ks77cs].[none:source_of_money:nk]' type='filter' />
+            <card pane-specification-id='1' param='[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:amount_usd:qk]' type='color' />
+            <card pane-specification-id='2' param='[federated.16tss5s1lworu110jsqwd1ks77cs].[ctd:transaction_id:qk]' type='color' />
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{045F5021-DF37-402A-914C-7E6771FBB2C4}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 4'>
+      <cards>
+        <edge name='left'>
+          <strip size='300'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card pane-specification-id='0' param='[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:Calculation_973903483369877505:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{58C34738-5E80-4519-8A80-8933649E1BD7}' />
+    </window>
+    <window class='worksheet' name='Sheet 5'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='dropdown' param='[federated.16tss5s1lworu110jsqwd1ks77cs].[none:source_of_money:nk]' type='filter' />
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card pane-specification-id='1' param='[federated.16tss5s1lworu110jsqwd1ks77cs].[sum:Calculation_973903483369877505:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{A6BBF246-C574-425E-85E5-6C0B85F01A4E}' />
+    </window>
+  </windows>
+</workbook>
