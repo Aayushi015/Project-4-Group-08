@@ -28,6 +28,11 @@ def tableau2():
     # Return template and data
     return render_template("tableau2.html")
 
+# HTML ROUTES - MODEL
+@app.route("/model")
+def model():
+    return render_template("index.html")
+
 # // Note: App.py receives the payload from logic.js, then extract and parse and fix the data types of values to payload and send the infomation to model Helper. 
 # //../Our model Helper class we built and tested it in Jupyter Notebook with a function makePrediction that bring in all unique values to a data frame
 # // .. opens up the model, makes the inference, and return the inference back to the user.
