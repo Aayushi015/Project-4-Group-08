@@ -98,16 +98,18 @@ function makePredictions() {
             // Call buildDonut function
             buildDonut(prob);
         },
-        error: function(XMLHttpRequest, textStatus, errorThrown) {
-            console.error("Error: ", errorThrown);
-            console.error("Status: ", textStatus);
-            console.error("Response Text: ", XMLHttpRequest.responseText);
-            alert("Error occurred. Please check the console for details.");
-        }
+        
 
     });
 
 }
+function error(XMLHttpRequest, textStatus, errorThrown) {
+          console.error("Error: ", errorThrown);
+          console.error("Status: ", textStatus);
+          console.error("Response Text: ", XMLHttpRequest.responseText);
+          alert("Error occurred. Please check the console for details.");
+       }
+
 
 function buildDonut(prob) {
     // Data
