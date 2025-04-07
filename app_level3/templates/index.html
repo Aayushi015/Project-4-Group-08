@@ -24,14 +24,14 @@
 
     <div class="jumbotron text-center mt-4">
         <h1>Black Money Transaction Detection</h1>
-        <p class="lead">Use our machine learning model to determine whether a transaction source is legal or suspicious.</p>
+        <p class="lead">Use our machine learning model to determine whether a transaction source is legal or illegal.</p>
     </div>
 
     <div class="container mt-4">
         <div class="row">
           <!-- Left Column: Filter Form -->
           <div class="col-md-4">
-            <div class="card border-primary mb-4">
+            <div class="card mb-4" style="border: 2px solid #A8DADC;">
               <div class="card-header">Filters</div>
               <div class="card-body">
                 <div class="form-group">
@@ -75,19 +75,27 @@
                     <option value="False">No</option>
                   </select>
                 </div>
-                <button type="button" class="btn btn-primary w-100" id="filter">Make Prediction!</button>
+                <button type="button" class="btn w-100" id="filter" style="background-color: #A8DADC; color: #1D3557; border: none;">Make Prediction!</button>
               </div>
             </div>
           </div>
-      
+
             <!-- Right Column: Donut Chart -->
-            <div class="col-md-8 d-flex flex-column align-items-center">
-                <h2 class="mb-3">Prediction Chart</h2>
-                <div id="donut" style="height: 400px; margin-bottom: 20px;"></div>
-            </div>
-        </div>
-    <div id="donut" style="height: 400px; margin-bottom: 20px;"></div>
-    </div>
+          <div class="col-md-8 d-flex flex-column align-items-center">
+              <h2 class="mb-3">Prediction Chart</h2>
+              <div id="donut" style="height: 400px; margin-bottom: 20px;"></div>
+            </div> <!-- closes col-md-8 -->
+          </div> <!-- closes .row -->
+        </div> <!-- closes .container -->
+
+        <!-- Output section for showing the prediction result -->
+        <div id="output" style="display:none;"></div>
+
+        <footer>
+          <p>&copy; 2025 Black Money Transaction Detection App. All rights reserved.</p>
+        </footer>
+
+        
       
 </body>
 

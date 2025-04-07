@@ -50,10 +50,15 @@ def make_predictions():
     risk_score = int(content["risk_score"])
     shell_co_involved = int(content["shell_co_involved"])
 
-    # // Sending the infomation to model Helper, which again they read in up at the top
+    # Sending the infomation to model Helper, which again they read in up at the top
     preds = modelHelper.make_predictions(amount_usd, transaction_type, industry, reported_by_authority, risk_score, shell_co_involved)
-    # // We get the inference and send it back to the front end (JavaScripts (logic.js)
-    return(jsonify({"ok": True, "prediction": str(preds)}))
+
+    # Modify this part to return a custom message along with the prediction result
+    message = f"Prediction complete!"
+
+    # We get the inference and send it back to the front end (JavaScripts (logic.js)
+    # Return the modified message along with prediction in JSON format
+    return jsonify({"ok": True, "message": message, "prediction": str(preds)})
 
 
 #############################################################
