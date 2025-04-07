@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-import pickle
+import pickle # they turned me into a module morty
 
 # //..The model Helper class we built and tested it in Jupyter Notebook with a function makePrediction that bring in all unique values to a data frame
 # // .. opens up the model, makes the inference, and return the inference back to the user.
