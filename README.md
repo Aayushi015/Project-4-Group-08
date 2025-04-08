@@ -58,14 +58,6 @@ Feature Correlations: Relationships between input features and transaction legal
 
 Geographic Trends: Identified countries/regions with high frequencies of illegal activity
 
-## Technologies Used
-Language: Python
-
-Libraries: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, TensorFlow
-
-Visualization: Tableau
-
-Tools: Jupyter Notebook, GitHub
 
 ## Next Steps
 Finalize Tableau dashboard visuals
