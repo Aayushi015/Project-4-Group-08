@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>About Us</title>
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/minty/bootstrap.min.css">
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        /* Additional CSS for spacing and footer positioning */
+        .citation-list {
+            margin-bottom: 300px; /* Increase space between citation lists */
+        }
+        .image-container {
+            margin: 80px 0; /* Space above and below the image */
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure the body takes full height */
+        }
+        footer {
+            margin-top: auto; /* Push footer to the bottom */
+        }
+    </style>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1><strong>Sources</strong></h1>
+            </div>
+        </div>
+        <div class="combined-container">
+            <div class="col-md-6">
+                <ul class="citation-list">
+                    <li>
+                        <a href="https://www.kaggle.com/datasets/waqi786/global-black-money-transactions-dataset/data" target="_blank">An Extensive Collection of Black Money Transaction Data Across Various Countries on Kaggle</a> - 2014
+                    </li>
+                    <li>
+                        <a href="https://images.app.goo.gl/Qh5cSDHutuRLw23T9" target="_blank"> Visualization Tab and Homepage Image</a> 
+                    </li>
+                    <li>
+                        <a href="https://images.app.goo.gl/36BPKoQsqSaWhUge7" target="_blank"> Industrial Insights Tab Image</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-12 image-container text-center">
+                <img src="/static/images/project43.jpg" style="max-width: 100%; height: auto;"/>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!-- Footer -->
+<footer class="text-center py-3 mt-5" style="background-color: #1D3557; color: #fff;">
+    <p>&copy; 2025 Black Money Transaction Detection App. All rights reserved.</p>
+</footer>
+
+</body>
+
+</html>

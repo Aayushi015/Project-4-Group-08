@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Black Money Transaction Detection</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/minty/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    {% include 'navbar.html' %}
+
+    <!-- Cover Section -->
+    <div class="jumbotron text-center" style="background-color: # red; color: black; padding: 60px 20px;">
+        <h1 class="display-4">Welcome to Black Money Transaction Detection</h1>
+        <p class="lead">Use our machine learning model to detect whether a transaction source is legal or illegal, and explore various trends in black money transactions.</p>
+        <hr class="my-4">
+        <p>Our application uses advanced analytics to identify suspicious patterns in financial transactions. Explore and analyze the data through our prediction model or visual analytics tools.</p>
+        <a class="btn btn-light btn-lg custom-button" href="/prediction" role="button">Start Detecting Transactions</a>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Key Features of Our App</h2>
+        <div class="row">
+            <!-- Feature 1: Prediction Model -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="static/images/project42.jpg" class="card-img-top" alt="Prediction Feature">
+                    <div class="card-body">
+                        <h5 class="card-title">Transaction Prediction</h5>
+                        <p class="card-text">Detect if a transaction is related to black money by inputting various financial data (e.g. amount of funds, risk scores, transaction type..) into our prediction model. </p>
+                        <a href="/prediction" class="btn btn-primary custom-button">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Feature 2: Visualization -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="static/images/project4viz.jpg" class="card-img-top" alt="Visualization Feature">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Visualization</h5>
+                        <p class="card-text">Explore risk patterns, top countries involved, source of money, and transaction trends with interactive charts and graphs.</p>
+                        <a href="/tableau" class="btn btn-primary custom-button">Explore Visualizations</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Feature 3: Industry Insights -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="static/images/project44.jpg" class="card-img-top" alt="Industry Insights">
+                    <div class="card-body">
+                        <h5 class="card-title">Industry Insights</h5>
+                        <p class="card-text">Analyze which industries are most likely to engage in black money transactions based on historical data. Get insights into black money trends and learn how we can help detect suspicious transactions in various sectors.</p>
+                        <a href="/tableau2" class="btn btn-primary custom-button">See Insights</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action Section -->
+    <div class="container-fluid text-center bg-light py-5 mt-5">
+        <h3>Want to know more?</h3>
+        <p>.</p>
+        <a href="/about_us" class="btn btn-dark btn-lg">Meet Our Detection Team</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-3 mt-5" style="background-color: #1D3557; color: #fff;">
+        <p>&copy; 2025 Black Money Transaction Detection App. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

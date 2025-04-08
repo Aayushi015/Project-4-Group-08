@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Black Money Transaction by Industry</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/minty/bootstrap.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- Tableau JS API -->
+    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.9.2.min.js"></script>
+
+    <!-- Custom JS (make sure this file exists and is correctly referenced) -->
+    <script type="text/javascript" src="static/js/tableau_api.js"></script>
+
+</head>
+
+<body>
+    <!-- Include your common navbar here -->
+    {% include 'navbar.html' %}
+
+    <!-- Navigation Tabs -->
+    <div class="card container-fluid" style="margin-top:25px; margin-bottom: 25px; text-align: center;">
+        <h3>Black Money Transaction Trends by Industry</h3>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" id="byTrend" href="#">By Trend</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="byIndustry" href="#">By Industry</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="byCountry" href="#">By Tax Haven Country</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="correlationHeatmap" href="#">Correlation Heatmap</a>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- The div where Tableau will be embedded -->
+    <div id="tableauViz" style="height:700px;"></div>
+
+</body>
+
+</html>

@@ -22,7 +22,7 @@ $(document).ready(function() {
 
 function initializeViz() {
     var placeholderDiv = document.getElementById("tableauViz");
-    var url = "https://public.tableau.com/views/AirlineSafetyDashboard-Feb2025/AirlineSafetyDashboard";
+    var url = "https://public.tableau.com/shared/MB6PKM8KM?:display_count=n&:origin=viz_share_link";
     var options = {
         width: placeholderDiv.offsetWidth,
         height: placeholderDiv.offsetHeight,

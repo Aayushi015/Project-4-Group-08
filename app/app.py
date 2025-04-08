@@ -8,10 +8,15 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 modelHelper = ModelHelper()
 
 # Route to render index.html template using data from Mongo
+@app.route("/prediction")
+def prediction():
+    # Return template and data
+    return render_template("index.html")
+
 @app.route("/")
 def home():
     # Return template and data
-    return render_template("index.html")
+    return render_template("landing.html")
 
 @app.route("/about_us")
 def about_us():
@@ -27,6 +32,11 @@ def tableau():
 def tableau2():
     # Return template and data
     return render_template("tableau2.html")
+
+@app.route("/sources")
+def sources():
+    # Return template and data
+    return render_template("sources.html")
 
 # HTML ROUTES - MODEL
 @app.route("/model")
