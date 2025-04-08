@@ -26,3 +26,15 @@ footer {
     padding: 10px;
     border-radius: 5px;
 }
+
+.custom-button {
+    background-color: #1D3557;
+    color: white;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    justify-content: space-between; /* Space items evenly */
+    height: 100%; /* Ensure the card body takes full height */
+}
