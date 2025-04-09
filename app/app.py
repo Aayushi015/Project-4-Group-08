@@ -38,6 +38,11 @@ def sources():
     # Return template and data
     return render_template("sources.html")
 
+@app.route("/report")
+def report():
+    # Return template and data
+    return render_template("report.html")
+
 # HTML ROUTES - MODEL
 @app.route("/model")
 def model():
