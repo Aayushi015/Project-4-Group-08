@@ -10,11 +10,13 @@ $(document).ready(function() {
         console.error("Tableau API not loaded correctly.");
     }
 
+    
+
     // Function to initialize Tableau visualization
     function initializeViz() {
         var placeholderDiv = document.getElementById("tableauViz");
-        //var url = "https://public.tableau.com/views/Project4Tableau2_17440948653560/Story1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"; 
-        var url = "https://public.tableau.com/shared/BH4WQ3YFQ?:display_count=n&:origin=viz_share_link";
+        //var url = "https://public.tableau.com/views/Project4Tableau2_17443167356520/Story1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"; 
+        var url = "https://public.tableau.com/views/Project4Tableau2_17443167356520/Story1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link";
         var options = {
             width: placeholderDiv.offsetWidth,
             height: placeholderDiv.offsetHeight,
@@ -28,3 +30,5 @@ $(document).ready(function() {
         viz = new tableau.Viz(placeholderDiv, url, options);
     }
 });
+
+

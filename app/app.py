@@ -7,6 +7,7 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 modelHelper = ModelHelper()
 
+
 # Route to render index.html template using data from Mongo
 @app.route("/prediction")
 def prediction():
