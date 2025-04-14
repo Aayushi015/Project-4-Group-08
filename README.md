@@ -1,6 +1,6 @@
-#Capstone Project: Predicting Legal vs. Illegal Transactions
+# Capstone Project: Predicting Legal vs. Illegal Transactions
 
-##Project Overview
+## Project Overview
 This project focuses on building a machine learning model to classify global financial transactions as legal or illegal black money. By leveraging data-driven methods and a robust modeling pipeline, we aim to develop a fraud detection system that can help identify and prevent illicit financial activity such as money laundering and black-market operations.
 
 ## Dataset
